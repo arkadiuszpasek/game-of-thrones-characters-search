@@ -60,11 +60,10 @@ const outputHTML = matches => {
 
       return result;
     }).join('')
-    // console.log(html);
-
+    
     matchList.innerHTML = html;
-
-  } else matchList.innerHTML = '';
+  } 
+  else matchList.innerHTML = '';
 }
 
 search.addEventListener('input', () => searchCharacters(search.value));
