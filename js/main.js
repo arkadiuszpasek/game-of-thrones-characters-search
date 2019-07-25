@@ -2,7 +2,7 @@ const search = document.querySelector('#search');
 const matchList = document.querySelector('#match-list');
 
 const searchCharacters = async inputText => {
-  const res = await fetch('../data/characters.json');
+  const res = await fetch('https://raw.githubusercontent.com/arkadiuszpasek/Game-of-Thrones-Characters-Lookup/master/data/characters.json');
   const characters = await res.json();
 
   const regex = new RegExp(`^${inputText}`, 'gi');
