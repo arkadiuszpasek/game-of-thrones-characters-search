@@ -9,7 +9,7 @@ let characters;
 // })
 // .catch(err => { throw err });
 
-async function loadCharacters(){
+const loadCharacters = async () =>{
   const res = await fetch('https://raw.githubusercontent.com/arkadiuszpasek/Game-of-Thrones-Characters-Lookup/master/data/characters.json');
   characters = await res.json();
 }
@@ -60,7 +60,7 @@ const outputHTML = matches => {
 
       return result;
     }).join('')
-    
+
     matchList.innerHTML = html;
   } 
   else matchList.innerHTML = '';
