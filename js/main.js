@@ -1,10 +1,21 @@
 const search = document.querySelector('#search');
 const matchList = document.querySelector('#match-list');
+let characters;
 
-const searchCharacters = async inputText => {
+// fetch('https://raw.githubusercontent.com/arkadiuszpasek/Game-of-Thrones-Characters-Lookup/master/data/characters.jsonadd')
+// .then(res => res.json())
+// .then((out) => {
+//   console.log('Checkout this JSON! ', out);
+// })
+// .catch(err => { throw err });
+
+async function loadCharacters(){
   const res = await fetch('https://raw.githubusercontent.com/arkadiuszpasek/Game-of-Thrones-Characters-Lookup/master/data/characters.json');
-  const characters = await res.json();
+  characters = await res.json();
+}
+loadCharacters();
 
+const searchCharacters = inputText => {
   const regex = new RegExp(`^${inputText}`, 'gi');
   // characters.forEach(ch => console.log(ch.characterName));
   let matches = characters.filter( character => {
