@@ -1,29 +1,28 @@
 const search = document.querySelector('#search');
 const matchList = document.querySelector('#match-list');
-let characters;
 
-// fetch('https://raw.githubusercontent.com/arkadiuszpasek/Game-of-Thrones-Characters-Lookup/master/data/characters.jsonadd')
-// .then(res => res.json())
-// .then((out) => {
-//   console.log('Checkout this JSON! ', out);
-// })
-// .catch(err => { throw err });
+let characters;
 
 const loadCharacters = async () =>{
   const res = await fetch('https://raw.githubusercontent.com/arkadiuszpasek/Game-of-Thrones-Characters-Lookup/master/data/characters.json');
   characters = await res.json();
 }
+
 loadCharacters();
 
 const searchCharacters = inputText => {
+  if(inputText.length == 0){
+    matches = []
+    return;
+  } 
+
   const regex = new RegExp(`^${inputText}`, 'gi');
-  // characters.forEach(ch => console.log(ch.characterName));
+
   let matches = characters.filter( character => {
    const nameArray = character.characterName.split(' ')
    return nameArray.some(el => el.match(regex)) || character.characterName.match(regex);
   });
 
-  if(inputText.length == 0) matches = [];
   outputHTML(matches);
 }
 
@@ -33,7 +32,8 @@ const outputHTML = matches => {
       let actor = '';
       if(character.actorName != null) {
         actor = character.actorName;
-      } else if (character.actors != null) {
+      } 
+      else if (character.actors != null) {
         const actors = character.actors
         let array = [];
         actors.forEach(a => {
@@ -41,6 +41,7 @@ const outputHTML = matches => {
         });
         actor = array.join(', ');
       };
+
       let result = `
       <div class="card card-body mb-2">
         <h5>${character.characterName} <span class="text-info">${actor}</span></h5>
@@ -63,6 +64,7 @@ const outputHTML = matches => {
 
     matchList.innerHTML = html;
   } 
+
   else matchList.innerHTML = '';
 }
 
