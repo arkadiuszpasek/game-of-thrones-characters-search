@@ -12,6 +12,7 @@ class SearchBox extends React.Component {
   onChange(e) {
     const { onChange } = this.props;
     const input = e.target.value;
+
     this.setState({ value: input });
     onChange(input);
   }
@@ -20,7 +21,7 @@ class SearchBox extends React.Component {
     const { value } = this.state;
     return (
       <div className="row justify-content-md-center">
-        <div className="col-md-8">
+        <div className="col-lg-6 col-md-8">
           <div className="form-group">
             <input
               type="text"
