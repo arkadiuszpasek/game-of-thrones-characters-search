@@ -20,7 +20,7 @@ class SearchBox extends React.Component {
     const { value } = this.state;
     return (
       <div className="row justify-content-md-center">
-        <div className="col-md-6">
+        <div className="col-md-8">
           <div className="form-group">
             <input
               type="text"
