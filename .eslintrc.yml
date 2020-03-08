@@ -18,4 +18,5 @@ rules: {
   'react/jsx-filename-extension': off,
   'class-methods-use-this': off,
   'react/prefer-stateless-function': off,
+  'react/forbid-prop-types': off,
 }

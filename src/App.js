@@ -15,24 +15,18 @@ class App extends React.Component {
       input: '',
       characters: [],
     };
+    this.inputChange = this.inputChange.bind(this);
   }
 
   async componentDidMount() {
-    const res = await fetch('../data/characters.json');
+    const res = await fetch('https://raw.githubusercontent.com/arkadiuszpasek/game-of-thrones-characters-search/master/data/characters.json');
     const characters = await res.json();
 
     this.setState({ characters });
-    console.log(characters);
   }
 
   inputChange(userInput) {
     this.setState({ input: userInput });
-  }
-
-  updateList() {
-    const { input } = this.state;
-
-
   }
 
   render() {
@@ -41,7 +35,7 @@ class App extends React.Component {
       <div className="container text-center">
         <Header />
         <SearchBox input={input} onChange={this.inputChange} />
-        <MatchList characters={characters} />
+        <MatchList characters={characters} input={input} />
       </div>
     );
   }
