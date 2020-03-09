@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d89886a439e0412693d0d4568e69596a",
+    "revision": "c0a364324c6cbe2dc000617dbaf01bad",
     "url": "/game-of-thrones/index.html"
   },
   {
-    "revision": "8302b79c20c143312a12",
+    "revision": "31b2e6ebddcca5f44f3c",
     "url": "/game-of-thrones/static/css/main.197080d8.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/game-of-thrones/static/js/2.b8af7389.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8302b79c20c143312a12",
-    "url": "/game-of-thrones/static/js/main.50b154fb.chunk.js"
+    "revision": "31b2e6ebddcca5f44f3c",
+    "url": "/game-of-thrones/static/js/main.83fc7d33.chunk.js"
   },
   {
     "revision": "ff2305abb70cfd8baaaa",
