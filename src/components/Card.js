@@ -20,16 +20,18 @@ function Card(props) {
     actor = array.join(', ');
   }
 
-  let description = '';
+  const array = [];
   if (houseName) {
-    description += `House: ${houseName}`;
+    array.push(`House: ${houseName}`);
   }
   if (killedBy) {
-    description += `, Killed by: ${killedBy}`;
+    array.push(`Killed by: ${killedBy}`);
   }
   if (nickname) {
-    description += `, Nickname: ${nickname}`;
+    array.push(`Nickname: ${nickname}`);
   }
+  const description = array.join(', ');
+
   return (
     <div className="card card-body mb-2">
       <h5>
