@@ -1,7 +1,11 @@
-## What's installed:
-- eslint npm install eslint
-- PropTypes: npm install prop-types 
+# Game of thrones character search engine using React and Boostrap
+See demo [here](https://arkadiuszpasek.github.io/game-of-thrones/)
 
-This project was created using:
-- ReactJS
-- Bootstrap
+# How to configure this repostiory:
+- Clone to your drive
+- Run `npm install`
+- Run `npm start`
+
+## What's installed:
+- Eslint
+- PropTypes
